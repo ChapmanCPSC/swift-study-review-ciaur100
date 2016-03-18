@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Flash_Cards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +18,88 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="18j-3i-5g4">
+                                <rect key="frame" x="20" y="28" width="560" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEy-it-pdi">
+                                <rect key="frame" x="262" y="232" width="77" height="37"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7h-do-Glx">
+                                <rect key="frame" x="218" y="419" width="64" height="64"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="BR4-Cj-Mk5"/>
+                                    <constraint firstAttribute="width" secondItem="e7h-do-Glx" secondAttribute="height" multiplier="1:1" id="tkx-9y-xLR"/>
+                                </constraints>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I1u-UI-QVB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkh-ye-ZQg">
+                                <rect key="frame" x="318" y="419" width="64" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="Vgo-Ub-lOc"/>
+                                    <constraint firstAttribute="width" secondItem="wkh-ye-ZQg" secondAttribute="height" multiplier="1:1" id="h72-5F-4Cv"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w4e-5O-eta"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0v-tU-ElP">
+                                <rect key="frame" x="20" y="491" width="560" height="89"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zom-Ze-OeB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wkh-ye-ZQg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="50" id="5xl-ST-ANx"/>
+                            <constraint firstItem="x0v-tU-ElP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Clm-9J-DEQ"/>
+                            <constraint firstItem="VEy-it-pdi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DTA-bk-fW5"/>
+                            <constraint firstItem="x0v-tU-ElP" firstAttribute="top" secondItem="wkh-ye-ZQg" secondAttribute="bottom" constant="8" id="Lsf-La-KH3"/>
+                            <constraint firstItem="18j-3i-5g4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OLF-Km-nwG"/>
+                            <constraint firstItem="x0v-tU-ElP" firstAttribute="top" secondItem="e7h-do-Glx" secondAttribute="bottom" constant="8" id="QxP-bI-iK5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="x0v-tU-ElP" secondAttribute="bottom" constant="20" id="SEl-hC-bmv"/>
+                            <constraint firstItem="18j-3i-5g4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="SQq-mf-dzN"/>
+                            <constraint firstItem="e7h-do-Glx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-50" id="TUl-ON-ICV"/>
+                            <constraint firstItem="18j-3i-5g4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Z9E-nt-fHl"/>
+                            <constraint firstItem="x0v-tU-ElP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="caI-QK-e4e"/>
+                            <constraint firstItem="x0v-tU-ElP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fbo-Cr-TF9"/>
+                            <constraint firstItem="VEy-it-pdi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="lhw-3i-gg0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="x0v-tU-ElP" id="gOO-z4-cxO"/>
+                        <outlet property="resetButton" destination="e7h-do-Glx" id="1E1-M6-Xrn"/>
+                        <outlet property="timerLabel" destination="VEy-it-pdi" id="3ks-5t-l5t"/>
+                        <outlet property="topicLabel" destination="18j-3i-5g4" id="LJI-XX-ia1"/>
+                        <outletCollection property="circularButtons" destination="e7h-do-Glx" collectionClass="NSMutableArray" id="TBe-7s-fMl"/>
+                        <outletCollection property="circularButtons" destination="wkh-ye-ZQg" collectionClass="NSMutableArray" id="nUG-cx-ohB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="220" y="339"/>
         </scene>
     </scenes>
 </document>
